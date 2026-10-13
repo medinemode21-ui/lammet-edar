@@ -16,7 +16,7 @@ header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--surfa
 <div class="tabs" id="tabs"></div><main class="grid" id="products"></main>
 <section class="admin"><div class="adminbox"><h2>لوحة المشروع</h2><div class="stats"><div class="stat">الطلبات<b id="orders">0</b></div><div class="stat">قيمة المبيعات<b id="sales">0 دج</b></div><div class="stat">عدد المنتجات<b id="items">0</b></div></div><div class="notice">المنتجات والأسعار والتوفر اليومي تُدار من قاعدة بيانات لَمّة الدار.</div><div class="form" style="margin-top:14px"><input id="adminEmail" placeholder="بريد الإدارة"><input id="adminPassword" type="password" placeholder="كلمة مرور الإدارة"><button class="primary" onclick="adminLogin()">دخول الإدارة</button></div><div id="adminStatus" class="meta" style="margin:10px 0"></div><div id="adminProducts"></div></div></section>
 <div class="drawer" id="drawer" onclick="if(event.target===this)closeCart()"><div class="panel"><button class="close" onclick="closeCart()">×</button><h2>سلة الطلب</h2><div id="cartLines"></div><div class="form"><input id="name" placeholder="اسم الزبون"><input id="phone" placeholder="رقم الهاتف"><textarea id="address" rows="3" placeholder="العنوان / ملاحظات التوصيل"></textarea></div><h3>الإجمالي: <span id="total">0 دج</span></h3><button class="primary" onclick="placeOrder()">تأكيد الطلب</button></div></div>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase.js"></script>
 <script>
 let supabase=null;if(window.supabase&&window.supabase.createClient){supabase=window.supabase.createClient('https://kmlqtpzatkhicpaogckx.supabase.co','sb_publishable_rmsuIh8p9JTtAiSm83yytA_1oAF0jLx');}
 let products=[],cat='الكل',cart={},orders=0,sales=0;
